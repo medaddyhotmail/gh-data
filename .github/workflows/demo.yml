@@ -26,7 +26,7 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     outputs:
-      script-files: ${{ steps.publish.script-files }}
+      script-files: ${{ steps.publish.output.script-files }}
 
     steps:
       
@@ -64,7 +64,7 @@ jobs:
         run: ls
 
       - name: Output filename
-        run: echo "${{needs.build.outputs.script-files }}"
+        run: echo "${{ needs.build.outputs.script-files }}"
 
       - name: Deploy
         run: echo "Deploying..."
