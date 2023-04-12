@@ -49,10 +49,10 @@ jobs:
    
     steps:
 
-      - name: download artifacts
+      - name: Get build artifacts
         uses: actions/download-artifact@v3
-          with:
-            name:  dist-files
+        with:
+          name:  dist-files
       
       - name: Output content
         run: ls
